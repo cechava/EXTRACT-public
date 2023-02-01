@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ profile.user.username }}'s Profile</h1>
+<p>{{ profile.profile|safe }}</p>
+<p>Keywords: {{ profile.keywords }}</p>
+<p>Calendly Link: <a href="{{ profile.calendly_link }}">{{ profile.calendly_link }}</a></p>
+{% endblock %}

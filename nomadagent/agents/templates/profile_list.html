@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Travel Agent Profiles</h1>
+
+{% for profile in object_list %}
+    <h2>{{ profile.name }}</h2>
+    <table>
+        <td>
+            <img src="{{ profile.image.url }}" width="150px"/>
+            <br/>
+            keywords: {{ profile.keywords }}
+        </td>
+        <td style="vertical-align: top">
+            {{ profile.profile }}
+            <br/>
+            <br/>
+            <a href="{{ profile.calendly_link }}">{{ profile.calendly_link }}</a>
+        </td>
+    </table>
+
+{% endfor %}
+
+{% endblock %}

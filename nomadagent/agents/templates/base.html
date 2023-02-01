@@ -10,16 +10,17 @@
 <header>
     <nav class="navbar">
         <div class="navbar-left">
-        <a href="{% url 'agents:profile_list' %}">Travel Agent Profiles</a>
+            <a href="{% url 'agents:home' %}">Home</a>
+            <a href="{% url 'agents:profile_list' %}">Travel Agent Profiles</a>
         </div>
         <div class="navbar-right">
-        {% if user.is_authenticated %}
-            <a href="{% url 'agents:profile_update' %}">Update profile</a>
-            <a href="{% url 'agents:logout' %}">Logout</a>
-        {% else %}
-            <a href="{% url 'agents:login' %}">Login</a>
-            <a href="{% url 'agents:signup' %}">Sign Up</a>
-        {% endif %}
+            {% if user.is_authenticated %}
+                <a href="{% url 'agents:profile_update' %}">Update profile</a>
+                <a href="{% url 'agents:logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'agents:login' %}">Login</a>
+                <a href="{% url 'agents:signup' %}">Sign Up</a>
+            {% endif %}
         </div>
     </nav>
 </header>

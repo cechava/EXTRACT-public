@@ -9,7 +9,8 @@ from . import views
 app_name = 'agents'
 
 urlpatterns = [
-    path('', views.ProfileListView.as_view(), name='profile_list'),
+    path('', views.HomeView.as_view(), name='home'),
+    path('agent_profiles/', views.ProfileListView.as_view(), name='profile_list'),
     path('<int:pk>/', views.ProfileDetailView.as_view(), name='profile_detail'),
     path('update/', views.ProfileUpdateView.as_view(), name='profile_update'),
     path('signup/', views.SignUpView.as_view(), name='signup'),

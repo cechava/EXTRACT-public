@@ -6,19 +6,15 @@
 
 {% for profile in object_list %}
     <h2>{{ profile.name }}</h2>
-    <table>
-        <td>
-            <img src="{{ profile.image.url }}" width="150px"/>
-            <br/>
-            keywords: {{ profile.keywords }}
-        </td>
-        <td style="vertical-align: top">
-            {{ profile.profile }}
-            <br/>
-            <br/>
-            <a href="{{ profile.calendly_link }}">{{ profile.calendly_link }}</a>
-        </td>
-    </table>
+    <img src="{{ profile.image.url }}" width="150px" align="left" style="padding: 3px 10px 0px 3px;"/>
+    keywords: {{ profile.keywords }}
+    <br/>
+    <br/>
+    {{ profile.profile }}
+    <br/>
+    <br/>
+    <a href="{{ profile.calendly_link }}">{{ profile.calendly_link }}</a>
+    <hr/>
 
 {% endfor %}
 
